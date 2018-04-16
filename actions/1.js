@@ -1,0 +1,1 @@
+alert("alert from /actions/1.js");
