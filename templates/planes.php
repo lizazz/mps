@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,18 +8,29 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Task 1</title>
   </head>
   <body>
     	<div class="container">
     		<div class="row">
     			<div class="col-12">
-    				<a href="/task1.html">task 1</a>
-    			</div>
-    		</div>
-    		<div class="row">
-    			<div class="col-12">
-    				<a href="/task4.html">task 4</a>
+    				<table border="1px">
+    					<tr>
+    						<th>Plane Name</th>
+    						<th>Flight Date</th>
+    						<th>Female Avg. Age</th>
+    						<th>Male Avg. Age</th>
+    					</tr>
+						<?php foreach ($results as $result) {
+							if ($result['fem_avg'] || $result['mel_avg']) {?>
+						<tr>
+    						<td><?=$result['name']?></td>
+    						<td><?=$result['date']?></td>
+    						<td><?=(!$result['fem_avg']) ? "-1" : $result['fem_avg'] ?></td>
+    						<td><?=(!$result['mel_avg']) ? "-1" : $result['mel_avg']?></td>
+    					</tr>
+    					<?php }}?>
+    				</table>
     			</div>
     		</div>
     	</div>

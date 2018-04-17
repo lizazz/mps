@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,14 +14,32 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-12">
-    				<a href="/task1.html">task 1</a>
+    				<h1>Task 1 </h1>
     			</div>
     		</div>
     		<div class="row">
-    			<div class="col-12">
-    				<a href="/task4.html">task 4</a>
-    			</div>
+    			<div class="col-12">In this task you have to create method which displays statistics of age and sex of air passengers based on data from a MySQL database. </div>
+                <div class="col-12">
+                    Input data should filter results, based on the age of passengers and the flight date. For example in Listing 1, report should display people with the age higher than 50 years old and flights after March, 1 2011. Before execute method, order of character in input data was reversed. Syntax of method call should look like:
+                </div>  
     		</div>
+            <br>
+            <div class="row">
+                <div class='col-12'>
+                    <img src="/images/task1-1.jpg">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class='col-12'>
+                    <form method="post" action='/statistics.php'>
+                        <div class="form-group">
+                            <label for='string'>Enter string with date and age</label>
+                            <input type="text" name='string' placeholder="1102.III.1<etad;05>ega">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
     	</div>
 
     <!-- Optional JavaScript -->
