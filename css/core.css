@@ -1,0 +1,9 @@
+#cube {
+	width: 50px;
+	height: 5px;
+	outline: 2px solid #000;
+    border: 3px solid #fff; 
+	position: absolute;
+	left:0px;
+	top:0px;
+}
