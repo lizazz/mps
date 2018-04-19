@@ -2,7 +2,11 @@
 
 calcString();
 
-
+/**
+ * find substring that contains the maximum number of
+consecutive characters in this string
+ * @return none, just show result
+ */
 function calcString()
 {
 	if(!isset($_POST['string']) || strlen($_POST['string']) == 0){
