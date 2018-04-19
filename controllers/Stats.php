@@ -6,7 +6,7 @@ Class Stats{
 	/**
 	 * show table with air passengers who satisfy the input conditions
 	 * @param  string $string string with input conditions
-	 * @return string template with 
+	 * @return string template with passenger's information
 	 */
 	static public function 	show_statistics($string){
 		include("dbconnect.php");
@@ -51,12 +51,19 @@ Class Stats{
 			FROM planes WHERE " .  $conditionDate;
 
 		$results = array();
+
 		foreach ($dbh->query($sql) as $row) {
 		   $results[] =$row;
 		}
+
 		include("./templates/planes.php");
 	}
 
+	/**
+	 * get prepared Date data to mysql request
+	 * @param  string $dateString part of input request with date data
+	 * @return string   part of condition for final  request
+	 */
 	static private function getDate($dateString)
 	{
 		$signArray = array('<', '>');
@@ -92,14 +99,19 @@ Class Stats{
 		return '';
 	}
 
-	static private function getAge($AgeString)
+	/**
+	 * get prepared Age data to mysql request
+	 * @param  string $ageString part of input request with date data
+	 * @return string   part of condition for final  request
+	 */
+	static private function getAge($ageString)
 	{
 		$signArray = array('<', '>');
-		$sign = substr($AgeString, 3, 1);
+		$sign = substr($ageString, 3, 1);
 		if (!in_array($sign, $signArray)) {
 			return '';
 		}
-		$ageValue = intval(substr($AgeString, 4));
+		$ageValue = intval(substr($ageString, 4));
 		
 		if ($ageValue > 0) { 
 			return " AND age " . $sign . " " . $ageValue;
